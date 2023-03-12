@@ -105,8 +105,8 @@ class ViewTests(TestCase):
             reverse(
                 'posts:post_detail',
                 kwargs={'post_id': self.post.pk}
-                )
             )
+        )
         self.assertIn(self.comment, response.context['comments'])
 
     def test_post_create_page_show_context(self):
@@ -157,12 +157,10 @@ class ViewTests(TestCase):
         self.authorized_client.get(reverse(
             'posts:profile_follow',
             kwargs={'username': self.follow_author.username}
-            )
-        )
+            ))
         self.assertTrue(Follow.objects.filter(
             user=self.user, author=self.follow_author
-            ).exists()
-        )
+            ).exists())
 
     def test_unfollow_author(self):
         """Тестирование на удаление автора из подписок"""
@@ -176,8 +174,7 @@ class ViewTests(TestCase):
         ))
         self.assertFalse(Follow.objects.filter(
             user=self.user, author=self.follow_author
-            ).exists()
-        )
+            ).exists())
 
     def test_new_post_in_correct_follow_pages(self):
         """Тестирование на отображении новой
@@ -188,8 +185,7 @@ class ViewTests(TestCase):
             )
         )
         response = self.authorized_client.get(
-            reverse('posts:follow_index')
-        )
+            reverse('posts:follow_index'))
         self.assertIn(self.post_follow, response.context['page_obj'])
 
     def test_unfollowing_posts(self):
