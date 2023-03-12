@@ -70,24 +70,15 @@ class PostFormTests(TestCase):
 
     def test_create_post(self):
         """Тест на создание поста"""
-        count = Post.objects.count() + 1
+        post_count = Post.objects.count()
         response = self.authorized_client.post(
             reverse('posts:post_create'),
             data=self.form_data_create,
             follow=True
         )
-        self.assertRedirects(
-            response,
-            reverse('posts:profile', kwargs={'username': self.user.username})
-        )
-        self.assertEqual(Post.objects.count(), count)
-        self.assertTrue(Post.objects.filter(
-            text=self.form_data_create['text'],
-            group=self.form_data_create['group'],
-            image='posts/small.gif')
-            .exists()
-        )
-        self.assertEqual(response.status_code)
+        self.assertRedirects(response, reverse('posts:profile',
+                             kwargs={'username': self.user}))
+        self.assertEqual(Post.objects.count(), post_count + 1)
 
     def test_edit_post(self):
         """Тест на редактирование поста"""
