@@ -85,7 +85,8 @@ class PostFormTests(TestCase):
             text=self.form_data_create['text'],
             group=self.form_data_create['group'],
             image='posts/small.gif')
-                    .exists())
+                .exists()
+            )
         self.assertEqual(response.status_code)
 
     def test_edit_post(self):

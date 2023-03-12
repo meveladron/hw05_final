@@ -156,8 +156,8 @@ class ViewTests(TestCase):
         """Тестирование на добавление автора в подписки"""
         self.authorized_client.get(reverse(
             'posts:profile_follow',
-            kwargs={'username': self.follow_author.username}
-            ))
+            kwargs={'username': self.follow_author.username})
+            )
         self.assertTrue(Follow.objects.filter(
             user=self.user, author=self.follow_author
             ).exists())
@@ -173,7 +173,8 @@ class ViewTests(TestCase):
             kwargs={'username': self.follow_author.username}
         ))
         self.assertFalse(Follow.objects.filter(
-            user=self.user, author=self.follow_author
+            user=self.user,
+            author=self.follow_author
             ).exists())
 
     def test_new_post_in_correct_follow_pages(self):
@@ -181,8 +182,7 @@ class ViewTests(TestCase):
         записи автора на странице подписок"""
         self.authorized_client.get(reverse(
             'posts:profile_follow',
-            kwargs={'username': self.follow_author.username}
-            )
+            kwargs={'username': self.follow_author.username})
         )
         response = self.authorized_client.get(
             reverse('posts:follow_index'))
