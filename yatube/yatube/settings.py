@@ -110,10 +110,6 @@ EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'sent_emails')
 
 POSTS_ON_PAGE = 10
 
-NUMBER_OF_POSTS: int = 10
-LEN_OF_POSTS: int = 15
-FIRST_OF_POSTS: int = 10
-
 CSRF_FAILURE_VIEW = 'core.views.csrf_failure'
 
 MEDIA_URL = '/media/'
