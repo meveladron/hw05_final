@@ -159,7 +159,7 @@ class ViewTests(TestCase):
             kwargs={'username': self.follow_author.username}))
         self.assertTrue(Follow.objects.filter(
             user=self.user, author=self.follow_author
-            ).exists())
+        ).exists())
 
     def test_unfollow_author(self):
         """Тестирование на удаление автора из подписок"""
