@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Об авторе проекта{% endblock %}
+<main>
+{% block content %}
+<div class="container col-lg-11 col-sm-12">
+  <div class="row">
+    <h1>Об авторе</h1>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="author_card">
+              <div class="card" style="border: none;">
+                  <div class="h6 text-muted">
+                    <img src="{% static 'img/author.jpeg' %}" class="author_image"
+                         alt="Author image">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="author_card">
+              <div class="card" style="border: none;">
+                <div class="card-body">
+                  <h1>
+                    Николай
+                  </h1>
+                  <p>
+                    Всем привет! Меня зовут Николай, мне 26 лет, и я начинающий 
+                    бэкенд-разработчик. Я студент 57 когорты курса 
+                    <b>Python-разработчика</b>. 
+                    Данное веб проложение с использованием фреймворка Django 
+                    было создано с целью изучения тонкостей backend разработки.
+                  </p>
+                  <p>
+                    <a href="https://github.com/meveladron" 
+                    class="btn btn-primary">Мой профиль на GitHub</a>
+                  </p>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </main>
+{% endblock %}

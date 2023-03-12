@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Технологии{% endblock %}
+<main>
+{% block content %}
+<div class="container col-lg-11 col-sm-12">
+<div class="row">
+  <h1>Технологии</h1>
+  <div class="row row-cols-2 row-cols-md-6 g-4">
+    <div class="col">
+      <div class="tech_card">
+        <div class="card">
+        <img src="{% static 'img/tech/html.svg' %}" alt="html">
+          <div class="card-body">
+            <h5 class="card-title">HTML</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="tech_card">
+        <div class="card">
+        <img src="{% static 'img/tech/css.svg' %}" alt="html">
+          <div class="card-body">
+            <h5 class="card-title">CSS</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="tech_card">
+        <div class="card">
+        <img src="{% static 'img/tech/django.svg' %}" alt="html">
+          <div class="card-body">
+            <h5 class="card-title">Django</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="tech_card">
+        <div class="card">
+        <img src="{% static 'img/tech/python.svg' %}" alt="html">
+          <div class="card-body">
+            <h5 class="card-title">Python</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="tech_card">
+        <div class="card">
+        <img src="{% static 'img/tech/github.svg' %}" alt="html">
+          <div class="card-body">
+            <h5 class="card-title">Github</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="tech_card">
+        <div class="card">
+        <img src="{% static 'img/tech/sqlite.svg' %}" alt="html">
+          <div class="card-body">
+            <h5 class="card-title">SQLite</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row row-cols-1 row-cols-md-1 g-4">
+    <p>Проект Yatube - социальная сеть для блогеров, которая предоставляет возможность
+      авторам размещать свои публикации. Портал включает в себя панель администрирования,
+      управление пользователями, работу с записями (создание, редактирование, удаление),
+      группировку записей, пагинатор, модель отправки электронных сообщений пользователям,
+      вёрстку для страниц сайта. Работа реализована при помощи фреймворка Django,
+      В качестве хранения информации используется СУБД SQLite."</p>
+  </div>
+</div>
+</div>
+</div>
+</main>
+{% endblock %}
