@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
-{#% load cache %#}
+{% load cache %}
 {% load thumbnail %}
 {% block title %}
   Главная страница проекта Yatube
 {% endblock %}
 {% block content %}
-{#% cache 20 index_page %#}
+{% cache 20 index_page %}
 {% include 'posts/includes/switcher.html' %}
   <h1>Последние обновления на сайте</h1>
 {% for post in page_obj %}
@@ -32,7 +32,7 @@
 <hr>
   {% endif %}
   {% endfor %}
-  {#% endcache %#}
+  {% endcache %}
   {% include 'posts/includes/paginator.html' %}
 </div>
   {% endblock %}
