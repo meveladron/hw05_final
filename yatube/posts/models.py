@@ -1,6 +1,7 @@
 from django.contrib.auth import get_user_model
 from django.db import models
 
+
 User = get_user_model()
 
 
@@ -118,6 +119,10 @@ class Follow(models.Model):
     class Meta:
         verbose_name_plural = 'Подписки'
         verbose_name = 'Подписка'
+        constraints = (models.UniqueConstraint(
+            fields=['author', 'user'],
+            name='unique_follow'),
+        )
 
     def __str__(self):
         return f'{self.user} подписался на {self.author}'

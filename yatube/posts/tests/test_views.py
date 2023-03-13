@@ -83,7 +83,7 @@ class ViewTests(TestCase):
         shutil.rmtree(TEMP_MEDIA_ROOT, ignore_errors=True)
 
     def test_pages_uses_correct_template(self):
-        '''URL-адрес использует соответствующий шаблон.'''
+        """URL-адрес использует соответствующий шаблон."""
         for template, reverses in self.templates.items():
             with self.subTest(reverse=reverse):
                 response = self.authorized_client.get(template)
@@ -137,7 +137,7 @@ class ViewTests(TestCase):
                 self.assertIsInstance(form_field, context)
 
     def test_cache_context(self):
-        '''Проверка кэширования страницы index'''
+        """Проверка кэширования страницы index"""
         before_create_post = self.authorized_client.get(
             reverse('posts:index'))
         first_item_before = before_create_post.content
