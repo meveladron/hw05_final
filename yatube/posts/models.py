@@ -1,14 +1,13 @@
 from django.contrib.auth import get_user_model
 from django.db import models
 
-
 User = get_user_model()
 
 
 class Group(models.Model):
     title = models.CharField(
         verbose_name='Название',
-        help_text='Введите название публикации',
+        help_text='Введите название группы',
         max_length=200
     )
     slug = models.SlugField(
@@ -34,6 +33,11 @@ TEXT_LENGHT: int = 15
 
 
 class Post(models.Model):
+    title = models.CharField(
+        verbose_name='Название',
+        help_text='Введите название публикации',
+        max_length=200
+    )
     text = models.TextField(
         verbose_name='Описание',
         help_text='Введите текст публикации'

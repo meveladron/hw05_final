@@ -4,10 +4,8 @@
   Главная страница проекта Yatube
 {% endblock %}
 {% block content %}
-{#% load cache %#}
 {% include 'posts/includes/switcher.html' %}
   <h1>Подписки на авторов</h1>
-{#% cache 20 index_page %#}
 {% for post in page_obj %}
 <article>
   <ul>
@@ -18,21 +16,25 @@
       Дата публикации: {{ post.pub_date|date:"d E Y" }}
     </li>
   </ul>
-  {% thumbnail post.image "960x339" crop="center" upscale=True as im %}
+  {% thumbnail post.image "960x400" crop="center" upscale=True as im %}
   <img class="card-img my-2" src="{{ im.url }}">
 {% endthumbnail %}
+<h3>
+  <a href="{% url 'posts:post_detail' post.pk %}">
+  {{ post.title | linebreaksbr }}
+  </a>
+</h3>
   <p>
     {{ post.text | linebreaksbr }}
   </p>
   {% if post.group %}
-<a href="{% url 'posts:group_list' post.group.slug %}">Все записи группы</a>
+  <a class="proup-link" href="{% url 'posts:group_list' post.group.slug %}">Все записи группы</a>
   {% endif %}
 </article>
   {% if not forloop.last %}
 <hr>
   {% endif %}
   {% endfor %}
-  {#% endcache %#}
   {% include 'posts/includes/paginator.html' %}
 </div>
   {% endblock %}

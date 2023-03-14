@@ -1,6 +1,46 @@
 <!DOCTYPE html>
-<footer class="footer_bg border-top text-center py-3">
-  <p class="footer_text">
-    © {{ year }} Copyright <span style="color:red">Ya</span>tube
-  </p>
-</footer>
+{% load static %}
+  <footer class="footer-bs">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-md-4 footer-brand animated fadeInLeft">
+            <h2>
+              <img src="{% static 'img/logo.png' %}"
+              width="40" height="40"
+              class="d-inline-block align-top" alt="">
+              <span style="color:red">Ya</span>tube
+            </h2>
+              <p>Проект Yatube - социальная сеть для блогеров, 
+                которая предоставляет возможность авторам 
+                размещать свои публикации. Размещайте свои идеи, делитесь 
+                интересными новостями со своими подпичсиками.</p>
+              <p>© {{ year }} Copyright 
+              <span style="color:red">Ya</span>tube</p>
+          </div>
+        <div class="col-md-4 footer-nav animated fadeInUp">
+            <h4>Меню —</h4>
+            <div class="col-md-6">
+                  <ul class="pages">
+                    {% with request.resolver_match.view_name as view_name %}
+                      <li><a href="{% url 'about:author' %}">Об авторе</a></li>
+                      <li><a href="{% url 'about:tech' %}">Технологии</a></li>
+                      {% endwith %}
+                      <li><a href="https://docs.djangoproject.com/">Документация</a></li>
+                      <li><a href="https://practicum.yandex.ru/">Яндекс Практикум</a></li>
+                      <li><a href="#">Advice</a></li>
+                  </ul>
+              </div>
+          </div>
+        <div class="col-md-4 footer-social animated fadeInDown">
+            <h4>Контакты</h4>
+            <ul>
+                <li><a href="mailto:nikolay.sinkov97@yandex.ru">E-mail</a></li>
+                <li><a href="https://t.me/d1sp1nut">Telegram</a></li>
+                <li><a href="https://vk.com/meveladron">Vk</a></li>
+                <li><a href="https://github.com/meveladron">GitHub</a></li>
+              </ul>
+          </div>
+        </div>
+      </div>
+  </footer>
+</div>

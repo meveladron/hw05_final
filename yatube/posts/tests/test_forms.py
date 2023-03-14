@@ -29,6 +29,7 @@ class PostFormTests(TestCase):
             description='Тестовое описание',
         )
         cls.post = Post.objects.create(
+            title='Тестовое название группы',
             author=cls.user,
             text='Тестовый пост достаточной длины',
             group=cls.group,
@@ -47,11 +48,13 @@ class PostFormTests(TestCase):
             content_type='image/gif'
         )
         cls.form_data_create = {
+            'title': 'Тестовое название группы',
             'text': 'Тестовый текст',
             'group': cls.group.pk,
             'image': cls.uploaded,
         }
         cls.form_data_edit = {
+            'title': 'Тестовое название группы',
             'text': 'Новый тестовый текст',
             'group': cls.group.pk,
         }
@@ -94,6 +97,7 @@ class PostFormTests(TestCase):
         self.assertEqual(Post.objects.count(), count)
         self.assertTrue(
             Post.objects.filter(
+                title=self.form_data_edit['title'],
                 text=self.form_data_edit['text'],
                 group=self.form_data_edit['group'],
                 author=self.user,

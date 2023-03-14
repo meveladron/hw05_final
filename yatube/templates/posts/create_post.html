@@ -7,7 +7,7 @@
 {% block content %}
   <div class="container py-5">
     <div class="row justify-content-center">
-      <div class="col-md-8 p-5">
+      <div class="col-md-9 p-6">
         <div class="card">
           <div class="card-header">
           {% if post_change %}
@@ -24,7 +24,7 @@
           {% endif %}
           {% csrf_token %}
           {% for field in form %}
-            <div class="form-group row my-3 p-3">
+            <div class="form-group row my-3 p-6">
               <label for="{{ field.id_for_label }}">
               {{ field.label }}
               {% if field.field.required %}
@@ -40,7 +40,7 @@
               </div>
               {% endfor %}
               <div class="d-flex justify-content-end">
-                <button type="submit" class="btn btn-lg btn-primary">
+                <button type="submit" class="btn btn-primary">
                 {% if post_change %}
                   Изменить
                 {% else %}

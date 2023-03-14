@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
     <title>
       {% block title %}
         Последние обновления на сайте
@@ -24,11 +25,18 @@
       <div class="container py-5">
         <div class="custom-container">
         <div class="container col-lg-11 col-sm-12"> 
+          <main>
         {% block content %}
         {% endblock %}
+          </main>
         </div>
       </div>
-      </div>
-      {% include 'includes/footer.html' %}
+    </div>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">
+      <img src="{% static 'img/arrow.svg' %}"
+              width="40" height="40"
+              class="d-inline-block align-top" alt="">
+    </button>
+    {% include 'includes/footer.html' %}
   </body>
 </html>
