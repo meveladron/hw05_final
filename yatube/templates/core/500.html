@@ -1,7 +1,10 @@
 {% extends "base.html" %}
-{% block title %}500 server error{% endblock %}
+{% block title %}500 ошибка сервера{% endblock %}
+<main>
 {% block content %}
-  <h1>Custom 500</h1>
+  <h1>Ошибка 500</h1>
   <p>Серверу не удается обработать запрос к сайту.</p>
   <a href="{% url 'posts:index' %}">Перейдите на главную страницу</a>
+</div>
+</main>
 {% endblock %}

@@ -8,6 +8,8 @@ SECRET_KEY = '7e9)^vm2fzk!0+(oy$_dr=f3@ril2@=mh%l6o*#6f0#i+h79_s'
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    'www.meveladron.pythonanywhere.com',
+    'meveladron.pythonanywhere.com',
     'localhost',
     '127.0.0.1',
     '[::1]',
@@ -27,6 +29,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'sorl.thumbnail',
     'debug_toolbar',
+    'django_social_share',
 ]
 
 MIDDLEWARE = [
